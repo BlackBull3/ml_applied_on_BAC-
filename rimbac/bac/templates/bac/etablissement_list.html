@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Etablissement</title>{% endblock %}
+{% block content %}
+<div class="text-end pt-5"> <a href="/etablissement/add" class="btn btn-primary">Add Etablissement</a></div>
+<h1 class="text-center">Liste des Etablissements</h1>
+{% if etablissement_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Wilaya</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for x in etablissement_list %}
+      <tr>
+        <th scope="row">{{ x.code }}</th>
+        <td>{{ x.wilaya.nom }}</td>
+        <td><a href="/etablissement/{{ x.code }}" class="btn btn-info">View</a> | <a href="/etablissement/update/{{ x.code }}" class="btn btn-primary">Edit</a> | <a href="/etablissement/delete/{{ x.code }}" class="btn btn-danger">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no etablissements in the database.</p>
+{% endif %}
+{% endblock %}

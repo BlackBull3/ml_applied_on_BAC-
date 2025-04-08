@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Wilaya Details</title>{% endblock %}
+{% block content %}
+    <h1 class="text-center">Information de la Wilaya</h1>
+    <ul class="list-group p-5">
+        <li class="list-group-item"><b>Code</b>: {{ wilaya.code }}</li>
+        <li class="list-group-item"><b>Nom</b>: {{ wilaya.nom }}</li>
+    </ul>
+    <p class="text-center"><a href="/wilaya/" class="btn btn-primary">Back To List of Wilayas</a></p>
+{% endblock %}

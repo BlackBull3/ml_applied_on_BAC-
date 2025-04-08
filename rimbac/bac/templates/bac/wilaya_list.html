@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Wilayas</title>{% endblock %}
+{% block content %}
+<div class="text-end pt-5"> <a href="/wilaya/add" class="btn btn-primary">Add Wilaya</a></div>
+<h1 class="text-center">Liste des Wilayas</h1>
+{% if wilaya_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for w in wilaya_list %}
+      <tr>
+        <th scope="row">{{ w.code }}</th>
+        <td>{{ w.nom }}</td>
+        <td><a href="/wilaya/{{ w.code }}" class="btn btn-info">View</a> | <a href="/wilaya/update/{{ w.code }}" class="btn btn-primary">Edit</a> | <a href="/wilaya/delete/{{ w.code }}" class="btn btn-danger">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no Wilaays in the database.</p>
+{% endif %}
+{% endblock %}

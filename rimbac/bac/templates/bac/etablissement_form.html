@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Etablissement Edit</title>{% endblock %}
+{% block content %}
+<h1 class="text-center"> Add an Etablissement</h1>
+<form action="" method="post" class="text-center p-5">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+<p class="text-center"><a href="/etablissement/" class="btn btn-primary">Back To List of Etablissement</a></p>
+{% endblock %}

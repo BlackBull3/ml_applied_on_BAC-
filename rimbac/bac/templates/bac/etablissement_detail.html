@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Etablissement Details</title>{% endblock %}
+{% block content %}
+    <h1 class="text-center">Information de l'etablissement</h1>
+    <ul class="list-group p-5">
+        <li class="list-group-item"><b>Code</b>: {{ etablissement.code }}</li>
+        <li class="list-group-item"><b>Nom Wilaya</b>: {{ etablissement.wilaya.nom }}</li>
+    </ul>
+    <p class="text-center"><a href="/etablissement/" class="btn btn-primary">Back To List of Etablissement</a></p>
+{% endblock %}
